@@ -1,6 +1,8 @@
 set -e
 pushd ~/.dotfiles
-git add *.nix
+git add flake.nix
+git add system/
+git add user/
 echo "NixOS is rebuilding..."
 sudo nixos-rebuild switch --flake . && home-manager switch --flake . &>nixos-switch.log || (
   cat nixos-switch.log | grep --color error && false)
