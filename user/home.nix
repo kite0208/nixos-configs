@@ -33,7 +33,6 @@
   imports = [
     ./hyprland.nix
     ./theme.nix
-    ./emacs.nix
   ];
 
   #  # Neovim
@@ -48,7 +47,17 @@
 
   home.packages = with pkgs; [
     fastfetch
+    font-awesome
+    alacritty
   ];
+
+  # Alacritty config
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window.opacity = 0.9;
+    };
+  };
 
   home.file = {
   };

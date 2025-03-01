@@ -3,16 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    font-awesome
-  ];
 
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window.opacity = 0.9;
-    };
-  };
 
   wayland.windowManager.hyprland = {
     enable = true;
