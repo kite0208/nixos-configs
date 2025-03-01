@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Bluetooth
   hardware.bluetooth.enable = true;
-  
+
   # Fingerprint
   systemd.services.fprintd = {
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     serviceConfig.Type = "simple";
   };
   services.fprintd.enable = true;
@@ -24,15 +26,15 @@
 
   # USB mounting
   services.udisks2.enable = true;
-  
+
   # Auto upgrade
   system.autoUpgrade = {
     enable = true;
-#    flake = "./../flake.nix";
+    #    flake = "./../flake.nix";
     flags = [
       "--update-input"
       "nixpkgs"
-      "-L" 
+      "-L"
     ];
     dates = "09:00";
     randomizedDelaySec = "45min";

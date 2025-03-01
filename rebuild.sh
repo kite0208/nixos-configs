@@ -1,4 +1,3 @@
-#!/bin/bash
 set -e
 pushd ~/.dotfiles
 echo "enter file to edit."

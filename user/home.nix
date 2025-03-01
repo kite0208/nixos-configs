@@ -1,13 +1,15 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "user";
   home.homeDirectory = "/home/user";
 
   fonts.fontconfig.enable = true;
-  
+
   # Automounting usb-devices
   services.udiskie = {
     enable = true;
@@ -23,24 +25,24 @@
     enable = true;
     userName = "kite0208";
     userEmail = "kite0208@proton.me";
-    extraConfig = { 
+    extraConfig = {
       init.defaultBranch = "main";
     };
   };
 
-  imports = [ 
+  imports = [
     ./hyprland.nix
     ./theme.nix
     ./emacs.nix
-   ];
+  ];
 
-#  # Neovim
-#  programs.neovim = {
-#    enable = true;
-#    extraConfig = ''
-#      set number relativenumber
-#    '';
-#  };
+  #  # Neovim
+  #  programs.neovim = {
+  #    enable = true;
+  #    extraConfig = ''
+  #      set number relativenumber
+  #    '';
+  #  };
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
@@ -52,7 +54,7 @@
   };
 
   home.sessionVariables = {
-     EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   programs.bash = {

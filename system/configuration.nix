@@ -1,25 +1,26 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./libvirt.nix
-      ./services.nix
-      ./hyprland.nix
-      ./user.nix
-      ./pro-audio.nix
-      ./nvf.nix
-      ./youtube.nix
-      ./school.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./libvirt.nix
+    ./services.nix
+    ./hyprland.nix
+    ./user.nix
+    ./pro-audio.nix
+    ./nvf.nix
+    #      ./youtube.nix
+    ./school.nix
+  ];
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Zram
   zramSwap.enable = true;
@@ -27,7 +28,7 @@
   # LD (prebuilt binaries
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    libxkbcommon    
+    libxkbcommon
     xorg.libxcb
   ];
 
@@ -79,7 +80,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -122,5 +122,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

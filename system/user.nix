@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "audio" "docker"];
     packages = with pkgs; [
       obsidian
       bitwarden

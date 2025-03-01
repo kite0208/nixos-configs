@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   musnix.enable = true;
   musnix.rtirq.enable = true;
 

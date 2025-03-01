@@ -1,8 +1,10 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
-                teams-for-linux
-                wireshark
-        ];
+    teams-for-linux
+    wireshark
+  ];
 }
