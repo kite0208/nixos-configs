@@ -40,7 +40,7 @@
       "$fileManager" = "pcmanfm";
       "$menu" = "wofi --show drun";
       "$browser" = "firefox";
-      "$mainMod" = "ALT";
+      "$mainMod" = "SUPER";
       monitor = [
         "eDP-1,2256x1504@59.99900,auto,auto"
         "DP-3,1920x1080@60,auto,1.5"

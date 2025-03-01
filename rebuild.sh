@@ -1,8 +1,5 @@
 set -e
 pushd ~/.dotfiles
-echo "Enter file to edit"
-read file
-vi $file
 alejandra . &>/dev/null
 git add flake.nix system user
 echo "NixOS is rebuilding..."
