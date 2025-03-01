@@ -22,13 +22,13 @@
       modules = [
         nvf.nixosModules.default
         musnix.nixosModules.musnix
-        ./system/configuration.nix
+        ./configuration.nix
       ];
     };
     homeConfigurations = {
       user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [./user/home.nix];
+        modules = [./home.nix];
       };
     };
   };
