@@ -27,6 +27,7 @@
     userEmail = "kite0208@proton.me";
     extraConfig = {
       init.defaultBranch = "main";
+      pull.rebase = true;
     };
   };
 
