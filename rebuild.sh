@@ -7,4 +7,3 @@ sudo nixos-rebuild switch --flake . && home-manager switch --flake . &>nixos-swi
 gen=$(nixos-rebuild list-generations | grep current)
 git commit -am "$gen" 
 git push origin main
-popd
