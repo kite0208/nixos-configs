@@ -25,6 +25,7 @@
       gnome-chess
       gnuchess
       freshrss
+      xz
     ];
   };
 }
