@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  virtualisation.xen.enable = true;
   #  virtualisation.libvirtd = {
   #    enable = true;
   #    qemu = {
@@ -23,5 +22,5 @@
   #    };
   #  };
   environment.systemPackages = [pkgs.virt-manager];
-  #  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.enable = true;
 }
