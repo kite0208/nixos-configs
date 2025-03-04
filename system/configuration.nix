@@ -14,7 +14,7 @@
     ./hyprland.nix
     ./user.nix
     ./pro-audio.nix
-    ./nvf.nix
+    #    ./nvf.nix
     #      ./youtube.nix
     ./school.nix
   ];

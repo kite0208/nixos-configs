@@ -36,13 +36,17 @@
     ./theme.nix
   ];
 
-  #  # Neovim
-  #  programs.neovim = {
-  #    enable = true;
-  #    extraConfig = ''
-  #      set number relativenumber
-  #    '';
-  #  };
+  # Neovim
+  programs.neovim = {
+    viAlias = true;
+    enable = true;
+    extraConfig = ''
+      set number relativenumber
+    '';
+    plugins = with pkgs.vimPlugins; [
+      nvchad
+    ];
+  };
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
